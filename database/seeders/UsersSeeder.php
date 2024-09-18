@@ -38,7 +38,7 @@ class UsersSeeder extends Seeder
         //
         for ($i = 2; $i <= 10; $i++) { // El bucle empieza en 1 y va hasta 20
             DB::table('users')->insert([
-                'name' => 'name ' . str_pad($i, 2, '0', STR_PAD_LEFT), // Genera 'nombre 01', 'nombre 02', etc.
+                'name' => $this->randomNombre(), // Genera 'nombre 01', 'nombre 02', etc.
                 'surname' => 'surname ' . str_pad($i, 2, '0', STR_PAD_LEFT), // Genera 'apellido 01', 'apellido 02', etc.
                 'DNI' => $this->generateDNI(), // Generación de DNI con 8 números y una letra
                 'email' => 'usuario' . str_pad($i, 2, '0', STR_PAD_LEFT) . '@example.com', // Email secuencial
@@ -77,6 +77,17 @@ class UsersSeeder extends Seeder
     {
         $paises = ['Colombia', 'España', 'Alemania']; // Lista de países permitidos
         return $paises[array_rand($paises)]; // Selecciona aleatoriamente uno de los países
+    }
+
+        /**
+     * Select a random country from a predefined list.
+     *
+     * @return string
+     */
+    private function randomNombre()
+    {
+        $nombre = ['Jose', 'Luis', 'Pablo', 'Carlos', 'Luisa', 'Ana', 'Maria']; // Lista de países permitidos
+        return $nombre[array_rand($nombre)]; // Selecciona aleatoriamente uno de los países
     }
 
 }
