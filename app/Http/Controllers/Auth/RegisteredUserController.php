@@ -47,7 +47,7 @@ class RegisteredUserController extends Controller
             'DNI' => $request->DNI,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'password_rep' => Hash::make($request->password),
+            'password_rep' => Hash::make($request->password_rep),
             'telefono' => $request->telefono,
             'pais' => $request->pais,
             'sobre_ti' => $request->sobre_ti,
