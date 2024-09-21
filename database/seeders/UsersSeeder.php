@@ -23,8 +23,8 @@ class UsersSeeder extends Seeder
                 'surname' => 'VIU' , // Genera 'apellido 01', 'apellido 02', etc.
                 'DNI' => $this->generateDNI(), // Generación de DNI con 8 números y una letra
                 'email' => 'seguridadweb@campusviu.es', // Email secuencial
-                'password' => 'S3gur1d4d?W3b', // Contraseña encriptada
-                'password_rep' => 'S3gur1d4d?W3b', // Repetición de la contraseña encriptada
+                'password' => Hash::make('S3gur1d4d?W3b'), // Contraseña encriptada
+                'password_rep' => Hash::make('S3gur1d4d?W3b'), // Repetición de la contraseña encriptada
                 'telefono' => '+34' . rand(600000000, 699999999), // Teléfono aleatorio en formato español
                 'pais' => $this->randomPais(), // Selección aleatoria entre Colombia, España, Alemania
                 'sobre_ti' => Str::random(100), // Descripción aleatoria de 100 caracteres
