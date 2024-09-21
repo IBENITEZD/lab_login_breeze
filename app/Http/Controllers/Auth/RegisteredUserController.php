@@ -39,6 +39,17 @@ class RegisteredUserController extends Controller
             'DNI' => ['required', 'regex:/^\d{9}[A-Za-z]$/'],
             'email' =>  ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+        ], [
+            'name.required' => 'El nombre es obligatorio',
+            'surname.required' => 'El apellido es obligatorio',
+            'name.min' => 'El nombre debe tener al menos 2 caracteres',
+            'name.max' => 'El nombre no puede tener más de 20 caracteres',
+            'surname.min' => 'El apellido debe tener al menos 2 caracteres',
+            'surname.max' => 'El apellido no puede tener más de 20 caracteres',
+            'DNI.regex' => 'El DNI no tiene el formato adecuado',
+            'DNI.required' => 'El DNI es obligatorio',
+            'password' => 'La contraseña no cumple con los requisitos de seguridad.',
+            'password.confirmed' => 'Las contraseñas no coinciden'
         ]);
 
         $user = User::create([
