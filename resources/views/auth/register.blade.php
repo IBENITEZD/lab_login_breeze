@@ -57,7 +57,10 @@
 
                 <x-input id="password_confirmation" class="block mt-1 w-full"
                                 type="password"
-                                name="password_confirmation" required />
+                                name="password_confirmation" required
+                                onpaste="return false;"
+                                oncopy="return false;"
+                />
             </div>
 
 
